@@ -1,0 +1,156 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>微信(34)</ion-title>
+  </ion-navbar>
+  <ion-fab mini right middle>
+    <button ion-fab mini color="dark">
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list style="  margin-top: 55px!important; margin-left: -70px!important;">
+      <button *ngFor="let item of items" (click)="openpage1Page(item)"
+              style="font-size: 15px;width: 120px;height: 40px;border-bottom:1px solid #f1f1f1;color: white;background-color: #504e4e">
+        <ion-icon [name]=" item.icon" [ngStyle]="{'color': item.color}"></ion-icon>
+        {{ item.title }}
+      </button>
+      <!--*ngFor="let item of items"遍历循环的功能
+      -->
+    </ion-fab-list>
+  </ion-fab>
+</ion-header>
+<ion-content>
+  <!--搜索栏，还没有完成跳转的功能，只是一个样子-->
+  <ion-searchbar (click)="openSearchPage()"></ion-searchbar>
+  <!--<button ion-button block (click)="presentLoading()">Show Loading</button>-->
+  <ion-list>
+    <ion-item-sliding *ngFor="let chatPerson of chatPerson">
+      <ion-item (click)="openChatPage(chatPerson)">
+        <ion-avatar item-start>
+          <img src="assets/imgs/{{chatPerson.personUrl}}">
+        </ion-avatar>
+        <h2 >{{chatPerson.personName}}</h2>
+        <p>{{chatPerson.personContent}}</p>
+        <p item-end>{{chatPerson.personDate}}</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="light" icon-start >
+          取消关注
+        </button>
+        <button ion-button style="background-color: red" icon-start>
+          删除
+        </button>
+
+      </ion-item-options>
+    </ion-item-sliding>
+   <!-- <ion-item-sliding>
+      <ion-item (click)="openChatPage()">
+        <ion-avatar item-start>
+          <img src="assets/imgs/header1.jpg">
+        </ion-avatar>
+        <h2>小先生</h2>
+        <p>[语音聊天]</p>
+        <p item-end>18/12/9</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="light" icon-start>
+          取消关注
+        </button>
+        <button ion-button style="background-color: red" icon-start>
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/header2.jpg">
+        </ion-avatar>
+        <h2>老王</h2>
+        <p>你好厉害呀</p>
+        <p item-end>18/12/1</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="light" icon-start>
+          取消关注
+        </button>
+        <button ion-button style="background-color: red" icon-start>
+          删除
+        </button>
+
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/header4.jpg">
+        </ion-avatar>
+        <h2>蓝调</h2>
+        <p>今天双十一呀！！！</p>
+        <p item-end>18/11/11</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="light" icon-start>
+          取消关注
+        </button>
+        <button ion-button style="background-color: red" icon-start>
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/header5.jpg">
+        </ion-avatar>
+        <h2>ToTo</h2>
+        <p>库里今天很厉害呀</p>
+        <p item-end>18/12/6</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="light" icon-start>
+          取消关注
+        </button>
+        <button ion-button style="background-color: red" icon-start>
+          删除
+        </button>
+
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/orderTp.jpg">
+        </ion-avatar>
+        <h2>订阅号</h2>
+        <p>南京移动：头条|昨晚出现超级月亮......</p>
+        <p item-end>下午12：07</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="light" icon-start>
+          取消关注
+        </button>
+        <button ion-button style="background-color: red" icon-start>
+          删除
+        </button>
+
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/header.jpg">
+        </ion-avatar>
+        <h2>走了，走了</h2>
+        <p>好的。</p>
+        <p item-end>18/12/6</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="light" icon-start>
+          取消关注
+        </button>
+        <button ion-button style="background-color: red" icon-start>
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>-->
+  </ion-list>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>
+      通讯录
+    </ion-title>
+  </ion-navbar>
+  <ion-fab mini right middle>
+    <button ion-fab mini color="dark">
+      <ion-icon name="ios-person-add"></ion-icon>
+    </button>
+
+  </ion-fab>
+</ion-header>
+<ion-content>
+  <ion-searchbar (click)="openSearchPage()"></ion-searchbar>
+  <ion-list>
+
+    <ion-item>
+      <img src="assets/imgs/new.jpg" style="width: 30px;height:30px">
+      <span style="position: relative;top:-8px;left:10px">新的朋友</span></ion-item>
+    <ion-item>
+      <img src="assets/imgs/new1.jpg" style="width: 30px;height:30px">
+      <span style="position: relative;top:-8px;left:10px">群聊</span></ion-item>
+    <ion-item>
+      <img src="assets/imgs/new2.jpg" style="width: 30px;height:30px">
+      <span style="position: relative;top:-8px;left:10px">标签</span></ion-item>
+    <ion-item>
+      <img src="assets/imgs/new3.jpg" style="width: 30px;height:30px">
+      <span style="position: relative;top:-8px;left:10px">公众号</span></ion-item>
+  </ion-list>
+  <ion-item-group *ngFor="let phones of phones" >
+    <ion-item-divider color="light">{{phones.Num}}</ion-item-divider>
+    <ion-item (click)="openPhonePage(phones)">
+      <img src="assets/imgs/{{phones.Image}}" style="width: 30px;height:30px">
+      <span style="position: relative;top:-8px;left:10px">{{phones.Name}}</span>
+    </ion-item>
+
+  </ion-item-group>
+
+</ion-content>
